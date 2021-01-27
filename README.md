@@ -16,4 +16,5 @@ Nun könnte man in einer css-Datei folgendes einstellen um das Text-Inhaltseleme
 .t_inactive { opacity: 0; transition: all 0.25s ease-in-out; }
 
 
+
 Verträgt sich nicht mit dem Query-Template j_accordion.
