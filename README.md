@@ -13,3 +13,6 @@ Nun könnte man in einer css-Datei folgendes einstellen um das Text-Inhaltseleme
 
 .t_active { display: block; }
 .t_inactive { display: none; }
+
+
+Verträgt sich nicht mit dem Query-Templates j_accordion.
