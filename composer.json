@@ -2,10 +2,10 @@
     "name": "heimseiten/contao-universal-toggler-bundle",
     "description": "Ein beliebiges Element kann als Schalter für andere beliebige Elemente eingestellt werden, um beispielsweise Elemente ein und aus zu blenden. Wenn einem Element die Klasse toggler und toggle_xyz gegeben wird, werden allen anderen Elemente beim Klick auf das toggler-Element mit der Klasse toggle_xyz die Klassen t_active oder t_inactive zugewiesen.",
     "keywords": [
-        "contao",
-        "bundle",
-        "tag 3",
-        "tag 4"
+        "toggler",
+        "javscript",
+        "accordion",
+        "button"
     ],
     "type": "contao-bundle",
     "license": "GPL-3.0-or-later",
