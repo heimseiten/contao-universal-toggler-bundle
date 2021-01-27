@@ -22,7 +22,7 @@
         "source": "https://github.com/heimseiten/contao-universal-toggler-bundle"
     },
     "require": {
-        "contao/core-bundle": "^4.9"
+        "contao/core-bundle": "^4.4"
     },
     "require-dev": {
         "contao/easy-coding-standard": "^3.0",
