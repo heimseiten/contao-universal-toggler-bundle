@@ -5,7 +5,7 @@ Beispiel:
 
 Einem Bild-Inhaltselement werden die Klasse toggler und toggle_text_unter_bild hinzugefügt.
 
-Einem Text-Inhaltselement unter dem Bild wir die Klasse toggle_text_unter_bild hinzugefügt.
+Einem Text-Inhaltselement unter dem Bild wird die Klasse toggle_text_unter_bild hinzugefügt.
 
 Wenn nun auf das Bild-Inhaltselement geklickt wird, bekommt das Text-Inhaltselement die Klasse t_inactive. Wenn man noch mal draufklickt bekommt es die Klasse t_active.
 
