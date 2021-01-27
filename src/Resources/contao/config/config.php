@@ -11,6 +11,6 @@
  */
 
 
-if (TL_MODE == 'BE') {
+if (TL_MODE == 'FE') {
     $GLOBALS['TL_JAVASCRIPT'][] = 'bundles/heimseitencontaouniversaltoggler/universal-toggler.js';
 }
