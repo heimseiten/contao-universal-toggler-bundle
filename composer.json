@@ -33,7 +33,7 @@
     },
     "autoload": {
         "psr-4": {
-            "\\\\": "src/"
+            "Heimseiten\\ContaoUniversalTogglerBundle\\": "src/"
         },
         "classmap": [
             "src/Resources/contao"
@@ -46,6 +46,6 @@
         ]
     },
     "extra": {
-        "contao-manager-plugin": "\\\\ContaoManager\\Plugin"
+        "contao-manager-plugin": "Heimseiten\\ContaoUniversalTogglerBundle\\ContaoManager\\Plugin"
     }
 }
