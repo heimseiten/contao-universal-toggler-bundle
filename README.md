@@ -7,7 +7,7 @@ Einem Bild-Inhaltselement werden die Klasse toggler und toggle_text_unter_bild h
 
 Einem Text-Inhaltselement unter dem Bild wir die Klasse toggle_text_unter_bild hinzugefügt.
 
-Wenn nun auf das Bild-Inhaltselement geklickt wird, bekommt das Text-Inhaltselement die klasst t_active. Wenn man noch mal draufklickt bekommt es die Klasse t_inactive.
+Wenn nun auf das Bild-Inhaltselement geklickt wird, bekommt das Text-Inhaltselement die Klasse t_inactive. Wenn man noch mal draufklickt bekommt es die Klasse t_active.
 
 Nun könnte man in einer css-Datei folgendes einstellen um das Text-Inhaltselement ein und auszublenden: 
 
