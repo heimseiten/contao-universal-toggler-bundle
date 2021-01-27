@@ -12,6 +12,7 @@ Wenn nun auf das Bild-Inhaltselement geklickt wird, bekommt das Text-Inhaltselem
 Nun könnte man in einer css-Datei folgendes einstellen um das Text-Inhaltselement ein und auszublenden: 
 
 .t_active { opacity: 1; transition: all 0.25s ease-in-out; }
+
 .t_inactive { opacity: 0; transition: all 0.25s ease-in-out; }
 
 
