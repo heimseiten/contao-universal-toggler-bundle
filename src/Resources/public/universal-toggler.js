@@ -3,13 +3,44 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	
 	function start() {
 		document.querySelector('body').classList.add('toggler_active')
-		document.querySelectorAll('.toggler:not(.widget)').forEach(toggler => {
-			setInitialStatus(toggler)	
-			changeOnClick( toggler )
+		activateClickToggler('.click_toggler')
+		activateViewToggler('.view_toggler')
+	}
+
+	function activateViewToggler(togglerClass) {
+		document.querySelectorAll(togglerClass+':not(.widget)').forEach(toggler => {
+			setInitialStatus(toggler, togglerClass)
+			changeOnView(toggler, togglerClass)
 		})
 	}
 
-	function changeOnClick(toggler) {  
+	function changeOnView(toggler, togglerClass) { 
+		for ( q=0; q<elementsToToggle(toggler).length;q++ ) {
+			var cssPath = '.'+elementsToToggle(toggler)[q]+ ':not(' + togglerClass + '):not(.'+elementsToToggle(toggler)[q]+ ' > .'+elementsToToggle(toggler)[q]+')'
+		} 
+		inViewport(toggler, callbackElement => {
+			if (callbackElement.isIntersecting) { 
+				switchToActive(true, cssPath)
+			 } else { 
+				switchToActive(false, cssPath)
+			 }
+		})
+	}
+
+	function inViewport(elem, callback) {
+		return new IntersectionObserver(entries => {
+			entries.forEach(entry => callback(entry))
+		}).observe(elem)
+	  }
+
+	function activateClickToggler(togglerClass) {
+		document.querySelectorAll(togglerClass+':not(.widget)').forEach(toggler => {
+			setInitialStatus(toggler, togglerClass)
+			changeOnClick(toggler, togglerClass)
+		})
+	}
+
+	function changeOnClick(toggler, togglerClass) {  
 		toggler.addEventListener('mouseup',e => {
 			if ( toggler.querySelector('input.checkbox') ) {
 				if (e.path[0].tagName!='LABEL' && e.path[0].tagName!='INPUT') { 
@@ -19,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				}
 			}
 			for ( q=0; q<elementsToToggle(toggler).length;q++ ) {
-				var cssPath = '.'+elementsToToggle(toggler)[q]+ ':not(.toggler):not(.'+elementsToToggle(toggler)[q]+ ' > .'+elementsToToggle(toggler)[q]+')'
+				var cssPath = '.'+elementsToToggle(toggler)[q]+ ':not(' + togglerClass + '):not(.'+elementsToToggle(toggler)[q]+ ' > .'+elementsToToggle(toggler)[q]+')'
 				if ( document.querySelector(cssPath) ) {
 					var condition = !document.querySelector(cssPath).classList.contains('t_active')
 				}
@@ -28,9 +59,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		})
 	}
 
-	function setInitialStatus(toggler) {  
+	function setInitialStatus(toggler, togglerClass) {  
 		for ( t=0; t<elementsToToggle(toggler).length;t++ ) {
-			var cssPath = '.'+elementsToToggle(toggler)[t]+ ':not(.toggler):not(.'+elementsToToggle(toggler)[t]+ ' > .'+elementsToToggle(toggler)[t]+')'
+			var cssPath = '.'+elementsToToggle(toggler)[t]+ ':not(' + togglerClass + '):not(.'+elementsToToggle(toggler)[t]+ ' > .'+elementsToToggle(toggler)[t]+')'
 			if ( toggler.querySelector('input.checkbox') ) {
 				switchToActive(toggler.querySelector('input.checkbox').checked,cssPath)
 			} else {
