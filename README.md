@@ -1,5 +1,7 @@
 # Universal Toggler
-Ein beliebiges Element kann als Schalter für andere beliebige Elemente eingestellt werden, um beispielsweise Elemente ein- und auszublenden. Wenn einem Element die Klassen click_toggler und toggle_xyz gegeben wird, werden allen anderen Elementen welche die Klasse toggle_xyz haben beim Klick auf das toggler-Element die Klassen t_active oder t_inactive zugewiesen.
+Elemente schalten durch einen Klick oder durch das Erscheinen im Viewport. 
+
+Ein beliebiges Element kann als Schalter für andere beliebige Elemente eingestellt werden, um beispielsweise Elemente ein- und auszublenden. Wenn einem Element die Klassen click_toggler und toggle_xyz gegeben wird, werden allen anderen Elementen welche die Klasse toggle_xyz haben beim Klick auf das click_toggler-Element die Klassen t_active oder t_inactive zugewiesen.
 
 Beispiel:
 
