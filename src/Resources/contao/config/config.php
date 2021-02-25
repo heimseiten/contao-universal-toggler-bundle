@@ -12,5 +12,5 @@
 
 
 if (TL_MODE == 'FE') {
-    $GLOBALS['TL_JAVASCRIPT'][] = 'bundles/heimseitencontaouniversaltoggler/universal-toggler.js';
+    $GLOBALS['TL_HEAD'][] = '<script defer src="/bundles/heimseitencontaouniversaltoggler/universal-toggler.js"></script>'; 
 }
