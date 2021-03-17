@@ -103,7 +103,14 @@ function setActiveState(condition,selector) {
 			switch (condition) {
 				case true:  		
 					e.classList.add('t_active')
-					e.classList.remove('t_inactive') 
+					e.classList.remove('t_inactive')
+					// in case of Contao forms
+					if (e.querySelector('label').classList.contains('t_inactive')) {
+						e.querySelector('label').classList.remove('t_inactive')
+					}
+					if (e.querySelector('input:not([type="hidden"])').classList.contains('t_inactive')) {
+						e.querySelector('input:not([type="hidden"])').classList.remove('t_inactive')
+					}
 					break
 				case false:
 					e.classList.remove('t_active')
