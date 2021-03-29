@@ -14,7 +14,7 @@ function activateClickToggler(togglerClass) {
 	document.querySelectorAll(togglerClass+':not(.widget)').forEach(toggler => {
 		setInitialStatus(toggler, togglerClass)
 		toggler.addEventListener('mouseup',e => {
-			toggler.classList.toggle('toggler_activated')
+			toggler.classList.toggle('activated')
 			changeCheckboxStatus(toggler)
 			for ( let i=0; i<toggleElements(toggler).length; i++ ) {
 				const elementSelector = builtElementSelector(togglerClass, toggleElements(toggler)[i])
