@@ -19,7 +19,7 @@ function activateClickToggler(togglerClass) {
 			for ( let i=0; i<toggleElements(toggler).length; i++ ) {
 				const elementSelector = builtElementSelector(togglerClass, toggleElements(toggler)[i])
 				if ( document.querySelector(elementSelector) ) {
-					var condition = !document.querySelector(elementSelector).classList.contains('t_active')
+					var condition = !document.querySelector(elementSelector).classList.contains('toggle_status_initial')
 				}
 				setActiveState(condition, elementSelector)
 			}
@@ -106,23 +106,23 @@ function setActiveState(condition,selector) {
 		document.querySelectorAll(selector).forEach( e => {
 			switch (condition) {
 				case true:  		
-					e.classList.add('t_active')
-					e.classList.remove('t_inactive')
+					e.classList.add('toggle_status_initial')
+					e.classList.remove('toggle_status_toggled')
 					// in case of Contao forms
 					if (e.querySelector('label')) {
-						if (e.querySelector('label').classList.contains('t_inactive')) {
-							e.querySelector('label').classList.remove('t_inactive')
+						if (e.querySelector('label').classList.contains('toggle_status_toggled')) {
+							e.querySelector('label').classList.remove('toggle_status_toggled')
 						}
 					}
 					if (e.querySelector('input:not([type="hidden"])')) {
-						if (e.querySelector('input:not([type="hidden"])').classList.contains('t_inactive')) {
-							e.querySelector('input:not([type="hidden"])').classList.remove('t_inactive')
+						if (e.querySelector('input:not([type="hidden"])').classList.contains('toggle_status_toggled')) {
+							e.querySelector('input:not([type="hidden"])').classList.remove('toggle_status_toggled')
 						}
 					}
 					break
 				case false:
-					e.classList.remove('t_active')
-					e.classList.add('t_inactive') 
+					e.classList.remove('toggle_status_initial')
+					e.classList.add('toggle_status_toggled') 
 					break
 				default:
 					break
