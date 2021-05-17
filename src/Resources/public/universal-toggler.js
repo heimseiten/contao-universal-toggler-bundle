@@ -34,9 +34,9 @@ function activateViewToggler(togglerClass) {
 			const elementSelector = builtElementSelector(togglerClass, toggleElements(toggler)[i])
 			inViewport(toggler, callbackElement => {
 				if (callbackElement.isIntersecting) { 
-					setActiveState(true, elementSelector)
-				 } else { 
 					setActiveState(false, elementSelector)
+				 } else { 
+					setActiveState(true, elementSelector)
 				 }
 			})		
 		}	
