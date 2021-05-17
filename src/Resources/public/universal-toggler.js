@@ -5,7 +5,7 @@ function start() {
 	activateClickToggler('.click_toggler')
 	activateViewToggler('.view_toggler')
 	activateSelectToggler('.select_toggler')
-	document.querySelectorAll( "[class*=toggle_]" ).forEach(toggle_element => {
+	document.querySelectorAll( '[class*=toggle_], .click_toggler, .view_toggler'  ).forEach(toggle_element => {
 		toggle_element.setAttribute( 'style','--element_height:' + toggle_element.scrollHeight + 'px')
 	})
 }
