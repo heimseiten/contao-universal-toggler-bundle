@@ -1,3 +1,3 @@
 .click_toggler { cursor: pointer; }
-.toggle_status_initial { opacity: 0; height: 0; transition: all 0.25s ease-in-out; }
-.toggle_status_toggled { opacity: 1; height: var(--element_height); min-height: auto; transition: all 0.25s ease-in-out; }
+.toggle_status_initial { opacity: 0; transition: all 0.25s ease-in-out; }
+.toggle_status_toggled { opacity: 1; min-height: auto; transition: all 0.25s ease-in-out; }
