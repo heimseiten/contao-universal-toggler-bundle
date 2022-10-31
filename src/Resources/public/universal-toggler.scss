@@ -1,3 +1,17 @@
 .click_toggler { cursor: pointer; }
-.toggle_status_initial { opacity: 0; transition: all .5s ease-in-out; }
-.toggle_status_toggled { opacity: 1; min-height: auto; transition: all .5s ease-in-out; }
+.toggle_status_initial { 
+  opacity: 0; 
+  transition: all .5s ease-in-out; 
+  height: 0; 
+  min-height: 0;
+  &.mod_article { 
+    padding-top: 0; 
+    padding-bottom: 0; 
+  }
+}
+.toggle_status_toggled { 
+  opacity: 1; 
+  min-height: auto; 
+  transition: all .5s ease-in-out; 
+  height: var(--element_height); 
+}
