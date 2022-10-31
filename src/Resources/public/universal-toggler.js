@@ -6,7 +6,11 @@ function start() {
 	activateViewToggler('.view_toggler')
 	activateSelectToggler('.select_toggler')
 	document.querySelectorAll( '[class*=toggle_], .click_toggler, .view_toggler'  ).forEach(toggle_element => {
-		toggle_element.setAttribute( 'style','--element_height:' + toggle_element.scrollHeight + 'px')
+		var existing_styles = ''
+		if (toggle_element.getAttribute('style')) {
+			existing_styles = toggle_element.getAttribute('style')
+		}
+		toggle_element.setAttribute( 'style', existing_styles + '--element_height:' + toggle_element.scrollHeight + 'px')
 	})
 }
 
