@@ -9,8 +9,10 @@ function start() {
 		var existing_styles = ''
 		if (toggle_element.getAttribute('style')) {
 			existing_styles = toggle_element.getAttribute('style')
-		}
-		toggle_element.setAttribute( 'style', existing_styles + '--element_height:' + toggle_element.scrollHeight + 'px')
+		}		
+		toggle_element.setAttribute( 'style', existing_styles + 'height: auto; position: absolute; visibility: hidden;')
+		const element_height = toggle_element.clientHeight 
+		toggle_element.setAttribute( 'style', existing_styles + '--element_height:' + element_height + 'px')
 	})
 }
 
