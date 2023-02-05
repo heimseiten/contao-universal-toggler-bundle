@@ -10,7 +10,7 @@ function start() {
 		if (toggle_element.getAttribute('style')) {
 			existing_styles = toggle_element.getAttribute('style')
 		}		
-		toggle_element.setAttribute( 'style', existing_styles + 'height: auto; position: absolute; visibility: hidden;')
+		toggle_element.setAttribute( 'style', existing_styles + 'height: auto; visibility: hidden;')
 		const element_height = toggle_element.clientHeight 
 		toggle_element.setAttribute( 'style', existing_styles + '--element_height:' + element_height + 'px')
 	})
