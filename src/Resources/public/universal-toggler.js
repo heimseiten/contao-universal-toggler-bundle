@@ -5,14 +5,17 @@ function start() {
 	activateClickToggler('.click_toggler')
 	activateViewToggler('.view_toggler')
 	activateSelectToggler('.select_toggler')
+	calculateHeightOfToggleElement()
+	window.addEventListener('resize', e => {
+		calculateHeightOfToggleElement()
+	}, true)
+}
+
+function calculateHeightOfToggleElement() {
 	document.querySelectorAll( '[class*=toggle_], .click_toggler, .view_toggler'  ).forEach(toggle_element => {
-		var existing_styles = ''
-		if (toggle_element.getAttribute('style')) {
-			existing_styles = toggle_element.getAttribute('style')
-		}		
-		toggle_element.setAttribute( 'style', existing_styles + 'height: auto; visibility: hidden;')
+		toggle_element.setAttribute( 'style', 'height: auto; visibility: hidden;')
 		const element_height = toggle_element.clientHeight 
-		toggle_element.setAttribute( 'style', existing_styles + '--element_height:' + element_height + 'px')
+		toggle_element.setAttribute( 'style', '--element_height:' + element_height + 'px')
 	})
 }
 
